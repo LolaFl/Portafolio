@@ -1,0 +1,48 @@
+<section class="detalle">
+
+  <a routerLink="/proyectos" class="detalle__volver">
+    ← Volver a proyectos
+  </a>
+
+  @if (proyecto) {
+    <div class="detalle__contenido">
+
+      <div class="detalle__cabecera">
+        <span class="detalle__icono">{{ proyecto.icono }}</span>
+        <div>
+          <h2 class="detalle__titulo">{{ proyecto.nombre }}</h2>
+          <span class="detalle__tag">{{ proyecto.estado_del_proyecto }}</span>
+        </div>
+      </div>
+
+      <div class="detalle__tecnologias">
+        <h3 class="detalle__subtitulo">Tecnologías utilizadas</h3>
+        <div class="detalle__tech-lista">
+          @for (tech of proyecto.tecnologias; track tech) {
+            <span class="detalle__tech-item">{{ tech }}</span>
+          }
+        </div>
+      </div>
+
+      <div class="detalle__descripcion-bloque">
+        <h3 class="detalle__subtitulo">Descripción</h3>
+        <p class="detalle__descripcion">{{ proyecto.descripcion_larga }}</p>
+      </div>
+
+      <div class="detalle__links">
+        <a [href]="proyecto.repo" target="_blank" class="detalle__btn detalle__btn--github">
+          GitHub
+        </a>
+        @if (proyecto.demo) {
+          <a [href]="proyecto.demo" target="_blank" class="detalle__btn detalle__btn--demo">
+            Demo en vivo
+          </a>
+        }
+      </div>
+
+    </div>
+  } @else {
+    <p class="detalle__no-encontrado">Proyecto no encontrado.</p>
+  }
+
+</section>

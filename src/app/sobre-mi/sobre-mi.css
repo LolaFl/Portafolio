@@ -1,0 +1,118 @@
+.sobre-mi {
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.sobre-mi__intro {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: #f70f96;
+  color: rgb(7, 1, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.sobre-mi__titulo {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 0.25rem;
+}
+
+.sobre-mi__bajada {
+  color: #4a5568;
+  margin: 0;
+}
+
+.sobre-mi__bio {
+  color: #4a5568;
+  line-height: 1.8;
+  font-size: 1rem;
+  margin: 0;
+  padding: 1.25rem 1.5rem;
+  background: #f8fafc;
+  border-left: 4px solid #e94560;
+  border-radius: 0 8px 8px 0;
+}
+
+.habilidades__titulo,
+.contacto__titulo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin: 0 0 1rem;
+}
+
+.habilidades__grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.skill {
+  display: grid;
+  grid-template-columns: 1.5rem 140px 1fr;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.skill__icono { font-size: 1.1rem; }
+
+.skill__nombre {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #2d3748;
+}
+
+.skill__barra {
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.skill__progreso {
+  height: 100%;
+  background: linear-gradient(90deg, #e94560, #0f3460);
+  border-radius: 4px;
+  transition: width 0.8s ease;
+}
+
+.contacto__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.contacto__link {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.25rem;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  color: #2d3748;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.contacto__link:hover {
+  background: #eef2ff;
+  border-color: #c3dafe;
+}

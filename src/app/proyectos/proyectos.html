@@ -1,0 +1,22 @@
+<section class="proyectos">
+  <div class="proyectos__encabezado">
+    <h2 class="proyectos__titulo">Mis proyectos</h2>
+    <p class="proyectos__descripcion">Aquí subiré todos mis proyectos de manera organizada para tener una mayor accesibilidad, tanto personalmente como para otras personas interesadas.</p>
+  </div>
+
+  <div class="proyectos__grid">
+    @for (proyecto of proyectos; track proyecto.id) {
+      <article class="tarjeta">
+        <div class="tarjeta__header">
+          <span class="tarjeta__icono">{{ proyecto.icono }}</span>
+          <span class="tarjeta__tag">{{ proyecto.estado_del_proyecto }}</span>
+        </div>
+        <h3 class="tarjeta__titulo">{{ proyecto.nombre }}</h3>
+        <p class="tarjeta__descripcion">{{ proyecto.descripcion }}</p>
+        <a [routerLink]="['/proyectos', proyecto.id]" class="tarjeta__link tarjeta__link--ver-mas">
+          Ver más
+        </a>
+      </article>
+    }
+  </div>
+</section>
