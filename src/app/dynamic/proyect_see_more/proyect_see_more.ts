@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { Proyectos, Proyecto } from '../proyectos/proyectos';
+import { Proyectos, Proyecto } from '../proyects/proyects';
 
 @Component({
   selector: 'app-proyecto-detalle',

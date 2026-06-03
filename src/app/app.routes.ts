@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { SobreMi } from './sobre-mi/sobre-mi';
-import { Proyectos } from './proyectos/proyectos';
-import { ProyectoDetalle } from './proyecto_detalle/proyecto_detalle';
+import { SobreMi } from './dynamic/about_me/about_me';
+import { Proyectos } from './dynamic/proyects/proyects';
+import { ProyectoDetalle } from './dynamic/proyect_see_more/proyect_see_more';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'sobre-mi', pathMatch: 'full' },
