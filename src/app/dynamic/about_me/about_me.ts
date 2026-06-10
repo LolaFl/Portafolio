@@ -9,8 +9,8 @@ interface Habilidad {
 @Component({
   selector: 'app-sobre-mi',
   standalone: true,
-  templateUrl: './sobre-mi.html',
-  styleUrl: './sobre-mi.css'
+  templateUrl: './about_me.html',
+  styleUrl: './about_me.css'
 })
 export class SobreMi {
   habilidades: Habilidad[] = [

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { proyectService } from '../../services/proyects'
 
 export interface Proyecto {
   id: number;
@@ -17,31 +18,22 @@ export interface Proyecto {
   selector: 'app-proyectos',
   standalone: true,
   imports: [RouterLink],
-  templateUrl: './proyectos.html',
-  styleUrl: './proyectos.css'
+  templateUrl: './proyects.html',
+  styleUrl: './proyects.css'
 })
-export class Proyectos {
-  proyectos: Proyecto[] = [
-    {
-      id: 1,
-      nombre: 'Portafolio',
-      descripcion: 'Este proyecto se trata sobre la organización de todos mis proyectos.',
-      descripcion_larga: 'Descripción detallada del proyecto 1',
-      estado_del_proyecto: 'Terminado',
-      icono: '❤️',
-      tecnologias: ['Angular', 'TypeScript', 'CSS'],
-      repo: '',
-      demo: ''
-    },
-    {
-      id: 2,
-      nombre: 'Proyecto 2',
-      descripcion: 'Descripción del proyecto.',
-      descripcion_larga: 'Descripción detallada del proyecto 2.',
-      estado_del_proyecto: 'En proceso',
-      icono: '❤️',
-      tecnologias: ['Angular', 'Javascript'],
-      repo: ''
-    }
-  ];
+export class Proyectos 
+{
+  proyectos:any
+  constructor (private proyectsService: proyectService)
+  {
+    this.proyectsService.getproyects().subscribe
+    (
+      {
+        next: (data) => console.log(data),
+        error: (error) => console.error(error),
+        complete: () => console.info('complete')
+      }
+    )
+  }
 }
+

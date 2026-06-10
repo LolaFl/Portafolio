@@ -1,0 +1,26 @@
+{
+    "proyectos": 
+    [
+        {
+            "id":"1",
+            "nombre": "sistema de gestion escolar",
+            "tecologias": "html css...",
+            "rol": "desarrollador",
+            "url": ""
+        },
+        {
+            "id":"2",
+            "nombre": "sistema de gestion escolar",
+            "tecologias": "html css...",
+            "rol": "desarrollador",
+            "url": ""
+        },
+        {
+            "id":"3",
+            "nombre": "sistema de gestion escolar",
+            "tecologias": "html css...",
+            "rol": "desarrollador",
+            "url": ""
+        }
+    ]
+}

@@ -6,18 +6,18 @@ import { Proyectos, Proyecto } from '../proyects/proyects';
   selector: 'app-proyecto-detalle',
   standalone: true,
   imports: [RouterLink],
-  templateUrl: './proyecto_detalle.html',
-  styleUrl: './proyecto_detalle.css'
+  templateUrl: './proyect_see_more.html',
+  styleUrl: './proyect_see_more.css'
 })
 export class ProyectoDetalle implements OnInit {
   proyecto: Proyecto | undefined;
 
-  private listaProyectos: Proyecto[] = new Proyectos().proyectos;
+  private listaProyectos: any
 
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.proyecto = this.listaProyectos.find(p => p.id === id);
+    this.proyecto = this.listaProyectos.find((p: { id: number; }) => p.id === id);
   }
 }
