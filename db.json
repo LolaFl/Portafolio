@@ -1,26 +1,29 @@
 {
-    "proyectos": 
-    [
-        {
-            "id":"1",
-            "nombre": "sistema de gestion escolar",
-            "tecologias": "html css...",
-            "rol": "desarrollador",
-            "url": ""
-        },
-        {
-            "id":"2",
-            "nombre": "sistema de gestion escolar",
-            "tecologias": "html css...",
-            "rol": "desarrollador",
-            "url": ""
-        },
-        {
-            "id":"3",
-            "nombre": "sistema de gestion escolar",
-            "tecologias": "html css...",
-            "rol": "desarrollador",
-            "url": ""
-        }
-    ]
+  "proyectos": 
+  [
+    {
+      "id": 1,
+      "nombre": "Sistema de Gestión Escolar",
+      "descripcion": "Plataforma para administrar estudiantes, calificaciones y horarios.",
+      "descripcion_larga": "Sistema completo desarrollado por estudiantes de la Escuela 713 Juan Abdala Chayep, pasado de generacion en generacion. En este caso, nosotros con mi curso la heredamos en 2026, y nos dividimos el trabajo en varias partes. A mi grupo nos toco especificamente trabajar en el apartado Home, y en la estructura  y css general de toda la pagina. ",
+      "icono": "📚",
+      "estado_del_proyecto": "En desarrollo",
+      "rol_del_equipo": "Desarrollador Full Stack - Scrum Master",
+      "tecnologias": ["Angular", "TypeScript", "HTML/CSS"],
+      "repo": null,
+      "demo": null
+    },
+    {
+      "id": 2,
+      "nombre": "Portafolio Personal",
+      "descripcion": "Sitio web dinámico con Angular y JSON Server.",
+      "descripcion_larga": "Este proyecto consiste en un portafolio web dinámico y moderno desarrollado con Angular como framework frontend y JSON Server como backend simulado para la gestión de datos. El objetivo principal es mostrar de manera organizada y visualmente atractiva los proyectos personales, permitiendo a los visitantes explorar cada uno en detalle. A su vez, el sitio sirve como carta de presentación profesional, reflejando las habilidades técnicas y el estilo de diseño del desarrollador.",
+      "icono": "💼",
+      "estado_del_proyecto": "En desarrollo",
+      "rol_del_equipo": "Diseñador y desarrollador frontend",
+      "tecnologias": ["Angular", "TypeScript", "HTML/CSS", "JSON Server"],
+      "repo": "https://github.com/LolaFl/Portafolio",
+      "demo": null
+    }
+  ]
 }

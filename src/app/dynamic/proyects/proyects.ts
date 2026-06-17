@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { proyectService } from '../../services/proyects'
+import { proyectService } from '../../services/proyects';
 
-export interface Proyecto {
+export interface Proyecto 
+{
   id: number;
   nombre: string;
   descripcion: string;
@@ -10,30 +11,45 @@ export interface Proyecto {
   estado_del_proyecto: string;
   icono: string;
   tecnologias: string[];
+  rol_del_equipo: string; 
   repo: string;
   demo?: string;
 }
 
-@Component({
+@Component
+(
+  {
   selector: 'app-proyectos',
   standalone: true,
   imports: [RouterLink],
   templateUrl: './proyects.html',
   styleUrl: './proyects.css'
-})
-export class Proyectos 
+  }
+)
+export class Proyectos implements OnInit 
 {
-  proyectos:any
-  constructor (private proyectsService: proyectService)
+  proyectos: Proyecto[] = [];
+
+  constructor
+  (
+    private proyectsService: proyectService,
+    private cdr: ChangeDetectorRef 
+  ) {}
+
+  ngOnInit() 
   {
     this.proyectsService.getproyects().subscribe
     (
       {
-        next: (data) => console.log(data),
-        error: (error) => console.error(error),
-        complete: () => console.info('complete')
+      next: (data) => 
+      {
+        this.proyectos = data;
+        this.cdr.detectChanges();  
+        console.log('Proyectos cargados:', data);
+      },
+      error: (error) => console.error('Error al cargar proyectos:', error),
+      complete: () => console.info('Carga de proyectos completada')
       }
-    )
+    );
   }
 }
-

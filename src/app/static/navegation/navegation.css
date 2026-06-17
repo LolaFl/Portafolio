@@ -1,4 +1,5 @@
-.nav {
+.nav 
+{
   background: #16213e;
   border-bottom: 2px solid #0f3460;
   position: sticky;
@@ -6,7 +7,8 @@
   z-index: 100;
 }
 
-.nav__inner {
+.nav__inner 
+{
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 1.5rem;
@@ -14,7 +16,8 @@
   gap: 0.5rem;
 }
 
-.nav__link {
+.nav__link 
+{
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -28,17 +31,20 @@
   margin-bottom: -2px;
 }
 
-.nav__link:hover {
+.nav__link:hover 
+{
   color: white;
   border-bottom-color: #e94560;
 }
 
-.nav__link--activo {
+.nav__link--activo 
+{
   color: white;
   border-bottom-color: #e94560;
 }
 
-.nav__icono {
+.nav__icono 
+{
   font-size: 0.85rem;
   opacity: 0.7;
 }

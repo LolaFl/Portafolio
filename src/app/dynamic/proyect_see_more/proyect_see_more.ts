@@ -1,23 +1,48 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
-import { Proyectos, Proyecto } from '../proyects/proyects';
+import { proyectService } from '../../services/proyects';
+import { Proyecto } from '../proyects/proyects';
 
-@Component({
+@Component
+(
+  {
   selector: 'app-proyecto-detalle',
   standalone: true,
   imports: [RouterLink],
   templateUrl: './proyect_see_more.html',
   styleUrl: './proyect_see_more.css'
-})
-export class ProyectoDetalle implements OnInit {
+  }
+)
+export class ProyectoDetalle implements OnInit 
+{
   proyecto: Proyecto | undefined;
 
-  private listaProyectos: any
+  constructor
+  (
+    private route: ActivatedRoute,
+    private proyectsService: proyectService,
+    private cdr: ChangeDetectorRef
+  ) {}
 
-  constructor(private route: ActivatedRoute) {}
+  ngOnInit() 
+  {
+    const id = this.route.snapshot.paramMap.get('id');
+    console.log('ID desde la URL:', id); 
 
-  ngOnInit() {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.proyecto = this.listaProyectos.find((p: { id: number; }) => p.id === id);
+    this.proyectsService.getproyects().subscribe
+    (
+      {
+        next: (data: Proyecto[]) => 
+        {
+          this.proyecto = data.find(p => String(p.id) === id);
+          this.cdr.detectChanges(); 
+          if (!this.proyecto) 
+          {
+            console.warn('Proyecto no encontrado con ID:', id);
+          }
+        },
+        error: (error) => console.error('Error al cargar proyecto:', error)
+      }
+    );
   }
 }

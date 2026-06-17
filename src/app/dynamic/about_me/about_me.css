@@ -1,17 +1,20 @@
-.sobre-mi {
+.sobre-mi 
+{
   max-width: 720px;
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
-.sobre-mi__intro {
+.sobre-mi__intro 
+{
   display: flex;
   align-items: center;
   gap: 1.5rem;
 }
 
-.avatar {
+.avatar 
+{
   width: 72px;
   height: 72px;
   border-radius: 50%;
@@ -25,19 +28,22 @@
   flex-shrink: 0;
 }
 
-.sobre-mi__titulo {
+.sobre-mi__titulo 
+{
   font-size: 1.75rem;
   font-weight: 700;
   color: #1a1a2e;
   margin: 0 0 0.25rem;
 }
 
-.sobre-mi__bajada {
+.sobre-mi__bajada 
+{
   color: #4a5568;
   margin: 0;
 }
 
-.sobre-mi__bio {
+.sobre-mi__bio 
+{
   color: #4a5568;
   line-height: 1.8;
   font-size: 1rem;
@@ -49,20 +55,23 @@
 }
 
 .habilidades__titulo,
-.contacto__titulo {
+.contacto__titulo 
+{
   font-size: 1.1rem;
   font-weight: 700;
   color: #1a1a2e;
   margin: 0 0 1rem;
 }
 
-.habilidades__grid {
+.habilidades__grid 
+{
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
 }
 
-.skill {
+.skill 
+{
   display: grid;
   grid-template-columns: 1.5rem 140px 1fr;
   align-items: center;
@@ -71,33 +80,38 @@
 
 .skill__icono { font-size: 1.1rem; }
 
-.skill__nombre {
+.skill__nombre 
+{
   font-size: 0.9rem;
   font-weight: 500;
   color: #2d3748;
 }
 
-.skill__barra {
+.skill__barra 
+{
   height: 8px;
   background: #e2e8f0;
   border-radius: 4px;
   overflow: hidden;
 }
 
-.skill__progreso {
+.skill__progreso 
+{
   height: 100%;
   background: linear-gradient(90deg, #e94560, #0f3460);
   border-radius: 4px;
   transition: width 0.8s ease;
 }
 
-.contacto__links {
+.contacto__links 
+{
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
 }
 
-.contacto__link {
+.contacto__link 
+{
   display: flex;
   align-items: center;
   gap: 0.4rem;
@@ -112,7 +126,8 @@
   transition: background 0.2s, border-color 0.2s;
 }
 
-.contacto__link:hover {
+.contacto__link:hover 
+{
   background: #eef2ff;
   border-color: #c3dafe;
 }

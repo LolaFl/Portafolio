@@ -1,116 +1,209 @@
-.detalle {
-  max-width: 720px;
+.detalle 
+{
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  background: #f9fafc;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
 }
 
-.detalle__volver {
+.detalle__volver 
+{
   display: inline-block;
   color: #0f3460;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 500;
   margin-bottom: 2rem;
   transition: color 0.2s;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  background: #eef2ff;
 }
 
-.detalle__volver:hover {
+.detalle__volver:hover 
+{
   color: #e94560;
+  background: #fde8ea;
 }
 
-.detalle__contenido {
+.detalle__contenido 
+{
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.8rem;
 }
 
-.detalle__cabecera {
+.detalle__cabecera 
+{
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 1.2rem;
+  background: white;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 
-.detalle__icono {
-  font-size: 2.5rem;
+.detalle__icono 
+{
+  font-size: 3rem;
 }
 
-.detalle__titulo {
-  font-size: 1.75rem;
+.detalle__titulo-group 
+{
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+.detalle__titulo 
+{
+  font-size: 2rem;
   font-weight: 700;
   color: #1a1a2e;
-  margin-bottom: 0.4rem;
+  margin: 0;
 }
 
-.detalle__tag {
-  font-size: 0.75rem;
+.detalle__meta 
+{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.detalle__tag 
+{
+  font-size: 0.8rem;
   font-weight: 600;
   background: #eef2ff;
   color: #4338ca;
-  padding: 0.25rem 0.6rem;
+  padding: 0.2rem 0.9rem;
   border-radius: 20px;
 }
 
-.detalle__subtitulo {
+.detalle__rol-badge 
+{
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #1e293b;
+  background: #f1f5f9;
+  padding: 0.2rem 1rem;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.detalle__descripcion-bloque 
+{
+  background: white;
+  border-left: 5px solid #e94560;
+  border-radius: 0 12px 12px 0;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.detalle__subtitulo 
+{
   font-size: 1rem;
   font-weight: 700;
   color: #1a1a2e;
-  margin-bottom: 0.85rem;
+  margin: 0 0 0.8rem 0;
 }
 
-.detalle__tech-lista {
+.detalle__descripcion 
+{
+  color: #2d3748;
+  line-height: 1.8;
+  font-size: 1rem;
+  margin: 0;
+}
+
+.detalle__tecnologias 
+{
+  background: white;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.detalle__tech-lista 
+{
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
 }
 
-.detalle__tech-item {
+.detalle__tech-item 
+{
   background: #1a1a2e;
   color: white;
   font-size: 0.8rem;
   font-weight: 600;
-  padding: 0.3rem 0.85rem;
+  padding: 0.3rem 1rem;
   border-radius: 20px;
+  letter-spacing: 0.3px;
 }
 
-.detalle__descripcion-bloque {
-  background: #f8fafc;
-  border-left: 4px solid #e94560;
-  border-radius: 0 8px 8px 0;
-  padding: 1.25rem 1.5rem;
-}
-
-.detalle__descripcion {
-  color: #4a5568;
-  line-height: 1.8;
-  font-size: 0.95rem;
-  margin: 0;
-}
-
-.detalle__links {
+.detalle__links 
+{
   display: flex;
-  gap: 0.75rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.5rem;
 }
 
-.detalle__btn {
-  font-size: 0.9rem;
+.detalle__btn 
+{
+  font-size: 0.95rem;
   font-weight: 600;
-  padding: 0.6rem 1.4rem;
-  border-radius: 8px;
+  padding: 0.7rem 1.8rem;
+  border-radius: 30px;
   text-decoration: none;
-  transition: opacity 0.2s;
+  transition: all 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  cursor: pointer;
 }
 
-.detalle__btn:hover { opacity: 0.85; }
+.detalle__btn:hover 
+{
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
 
-.detalle__btn--github {
+.detalle__btn--github 
+{
   background: #1a1a2e;
   color: white;
 }
 
-.detalle__btn--demo {
+.detalle__btn--github:hover 
+{
+  background: #2d2d44;
+}
+
+.detalle__btn--demo 
+{
   background: #e94560;
   color: white;
 }
 
-.detalle__no-encontrado {
+.detalle__btn--demo:hover 
+{
+  background: #d63851;
+}
+
+.detalle__no-encontrado 
+{
   color: #4a5568;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 3rem 0;
 }

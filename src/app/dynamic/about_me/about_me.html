@@ -14,7 +14,8 @@
   <div class="habilidades">
     <h3 class="habilidades__titulo">Tecnologías</h3>
     <div class="habilidades__grid">
-      @for (skill of habilidades; track skill.nombre) {
+      @for (skill of habilidades; track skill.nombre) 
+      {
         <div class="skill">
           <span class="skill__icono">{{ skill.icono }}</span>
           <span class="skill__nombre">{{ skill.nombre }}</span>

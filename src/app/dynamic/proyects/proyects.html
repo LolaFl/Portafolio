@@ -5,16 +5,25 @@
   </div>
 
   <div class="proyectos__grid">
-    @for (proyecto of proyectos; track proyecto.id) {
+    @for (proyecto of proyectos; track proyecto.id) 
+    {
       <article class="tarjeta">
         <div class="tarjeta__header">
           <span class="tarjeta__icono">{{ proyecto.icono }}</span>
-          <span class="tarjeta__tag">{{ proyecto.estado_del_proyecto }}</span>
+          
+          <span 
+            class="tarjeta__tag" 
+            [class.tarjeta__tag--completado]="proyecto.estado_del_proyecto.toLowerCase().includes('completado')"
+            [class.tarjeta__tag--en-proceso]="proyecto.estado_del_proyecto.toLowerCase().includes('proceso')"
+            [class.tarjeta__tag--desarrollo]="proyecto.estado_del_proyecto.toLowerCase().includes('desarrollo')"
+          >
+            {{ proyecto.estado_del_proyecto }}
+          </span>
         </div>
         <h3 class="tarjeta__titulo">{{ proyecto.nombre }}</h3>
         <p class="tarjeta__descripcion">{{ proyecto.descripcion }}</p>
-        <a [routerLink]="['/proyectos', proyecto.id]" class="tarjeta__link tarjeta__link--ver-mas">
-          Ver más
+        <a [routerLink]="['/proyectos', proyecto.id]" class="tarjeta__link">
+          Ver más →
         </a>
       </article>
     }
