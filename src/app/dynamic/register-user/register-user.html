@@ -1,0 +1,120 @@
+<section class="registro">
+  <div class="registro__contenedor">
+    <h2 class="registro__titulo">Registro de Usuario</h2>
+    <p class="registro__descripcion">Completa el formulario para crear tu cuenta</p>
+
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="registro__form">
+      
+  
+      <div class="campo">
+        <label for="input_nombre" class="campo__label">Nombre</label>
+        <input 
+          formControlName="nombre" 
+          type="text" 
+          id="input_nombre" 
+          class="campo__input"
+          placeholder="Ingresa tu nombre">
+        @if (nombre?.invalid && nombre?.touched) {
+          <div class="campo__error">
+            @if (nombre?.errors?.['required']) {
+              <span>El nombre es obligatorio</span>
+            }
+            @if (nombre?.errors?.['minlength']) {
+              <span>El nombre debe tener al menos 2 caracteres</span>
+            }
+          </div>
+        }
+      </div>
+
+      <div class="campo">
+        <label for="input_apellido" class="campo__label">Apellido</label>
+        <input 
+          formControlName="apellido" 
+          type="text" 
+          id="input_apellido" 
+          class="campo__input"
+          placeholder="Ingresa tu apellido">
+        @if (apellido?.invalid && apellido?.touched) {
+          <div class="campo__error">
+            @if (apellido?.errors?.['required']) {
+              <span>El apellido es obligatorio</span>
+            }
+            @if (apellido?.errors?.['minlength']) {
+              <span>El apellido debe tener al menos 2 caracteres</span>
+            }
+          </div>
+        }
+      </div>
+
+      <div class="campo">
+        <label for="input_correo_electronico" class="campo__label">Correo electrónico</label>
+        <input 
+          formControlName="correo_electronico" 
+          type="email" 
+          id="input_correo_electronico" 
+          class="campo__input"
+          placeholder="ejemplo@correo.com">
+        @if (correo_electronico?.invalid && correo_electronico?.touched) {
+          <div class="campo__error">
+            @if (correo_electronico?.errors?.['required']) {
+              <span>El correo es obligatorio</span>
+            }
+            @if (correo_electronico?.errors?.['email']) {
+              <span>Ingresa un correo válido</span>
+            }
+          </div>
+        }
+      </div>
+
+      <div class="campo">
+        <label for="input_contrasena" class="campo__label">Contraseña</label>
+        <input 
+          formControlName="contrasena" 
+          type="password" 
+          id="input_contrasena" 
+          class="campo__input"
+          placeholder="Mínimo 8 caracteres">
+        @if (contrasena?.invalid && contrasena?.touched) {
+          <div class="campo__error">
+            @if (contrasena?.errors?.['required']) {
+              <span>La contraseña es obligatoria</span>
+            }
+            @if (contrasena?.errors?.['minlength']) {
+              <span>La contraseña debe tener al menos 8 caracteres</span>
+            }
+          </div>
+        }
+      </div>
+
+      <div class="campo">
+        <label for="input_confirmacion_contrasena" class="campo__label">Confirmar contraseña</label>
+        <input 
+          formControlName="confirmacion_contrasena" 
+          type="password" 
+          id="input_confirmacion_contrasena" 
+          class="campo__input"
+          placeholder="Repite tu contraseña">
+        @if (confirmacion_contrasena?.invalid && confirmacion_contrasena?.touched) {
+          <div class="campo__error">
+            @if (confirmacion_contrasena?.errors?.['required']) {
+              <span>Debes confirmar tu contraseña</span>
+            }
+          </div>
+        }
+        @if (registerForm.errors?.['mismatch'] && confirmacion_contrasena?.touched) {
+          <div class="campo__error">
+            <span>Las contraseñas no coinciden</span>
+          </div>
+        }
+      </div>
+
+      <button type="submit" class="registro__btn" [disabled]="registerForm.invalid">
+        Registrarse
+      </button>
+
+      <p class="registro__login">
+        ¿Ya tienes cuenta? <a routerLink="/iniciar-sesion" class="registro__link">Inicia sesión</a>
+      </p>
+    </form>
+  </div>
+</section>
