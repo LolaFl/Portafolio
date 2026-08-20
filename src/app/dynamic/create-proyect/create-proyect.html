@@ -1,1 +1,89 @@
-<p>create-proyect works!</p>
+<div class="modal-overlay">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Crear nuevo proyecto</h2>
+      <button class="modal-close" (click)="onClose()">✕</button>
+    </div>
+
+    <form [formGroup]="proyectForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label>Nombre del proyecto *</label>
+        <input formControlName="nombre" type="text" placeholder="Ej: Mi App">
+        <div class="error" *ngIf="f['nombre'].invalid && f['nombre'].touched">
+          <span *ngIf="f['nombre'].errors?.['required']">El nombre es obligatorio</span>
+          <span *ngIf="f['nombre'].errors?.['minlength']">Mínimo 3 caracteres</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Icono (emoji) *</label>
+        <input formControlName="icono" type="text" placeholder="Ej: 📚">
+        <div class="error" *ngIf="f['icono'].invalid && f['icono'].touched">
+          <span>El icono es obligatorio</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Estado del proyecto *</label>
+        <select formControlName="estado_del_proyecto">
+          <option value="">Selecciona un estado</option>
+          <option value="Completado">Completado</option>
+          <option value="En desarrollo">En desarrollo</option>
+          <option value="Planeado">Planeado</option>
+        </select>
+        <div class="error" *ngIf="f['estado_del_proyecto'].invalid && f['estado_del_proyecto'].touched">
+          <span>Selecciona un estado</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Descripción corta *</label>
+        <input formControlName="descripcion" type="text" placeholder="Breve descripción para la tarjeta">
+        <div class="error" *ngIf="f['descripcion'].invalid && f['descripcion'].touched">
+          <span *ngIf="f['descripcion'].errors?.['required']">La descripción es obligatoria</span>
+          <span *ngIf="f['descripcion'].errors?.['minlength']">Mínimo 10 caracteres</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Descripción larga *</label>
+        <textarea formControlName="descripcion_larga" rows="4" placeholder="Descripción detallada del proyecto"></textarea>
+        <div class="error" *ngIf="f['descripcion_larga'].invalid && f['descripcion_larga'].touched">
+          <span *ngIf="f['descripcion_larga'].errors?.['required']">La descripción larga es obligatoria</span>
+          <span *ngIf="f['descripcion_larga'].errors?.['minlength']">Mínimo 20 caracteres</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Rol en el proyecto *</label>
+        <input formControlName="rol_del_equipo" type="text" placeholder="Ej: Desarrollador Full Stack">
+        <div class="error" *ngIf="f['rol_del_equipo'].invalid && f['rol_del_equipo'].touched">
+          <span *ngIf="f['rol_del_equipo'].errors?.['required']">El rol es obligatorio</span>
+          <span *ngIf="f['rol_del_equipo'].errors?.['minlength']">Mínimo 5 caracteres</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Tecnologías (separadas por coma) *</label>
+        <input formControlName="tecnologias" type="text" placeholder="Ej: Angular, Node.js, MongoDB">
+        <div class="error" *ngIf="f['tecnologias'].invalid && f['tecnologias'].touched">
+          <span>Las tecnologías son obligatorias</span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>URL del repositorio (GitHub) *</label>
+        <input formControlName="repo" type="url" placeholder="https://github.com/tuusuario/proyecto">
+        <div class="error" *ngIf="f['repo'].invalid && f['repo'].touched">
+          <span *ngIf="f['repo'].errors?.['required']">La URL es obligatoria</span>
+          <span *ngIf="f['repo'].errors?.['pattern']">Ingresa una URL válida (https://...)</span>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn-cancel" (click)="onClose()">Cancelar</button>
+        <button type="submit" class="btn-save" [disabled]="proyectForm.invalid">Crear proyecto</button>
+      </div>
+    </form>
+  </div>
+</div>
